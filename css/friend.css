@@ -60,3 +60,12 @@
 .friend__now-listening span {
   opacity: 0.6;
 }
+
+.friend__add-btn {
+  background-color: #f5f5f5;
+  padding: 10px 14px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
