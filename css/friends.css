@@ -11,3 +11,7 @@
   opacity: 0.6;
   margin-bottom: 12px;
 }
+
+.friends__list .friends__friend {
+  padding: 10px 0px;
+}

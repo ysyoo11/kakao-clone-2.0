@@ -1,5 +1,10 @@
+.chat {
+  padding: 10px 0px;
+  border-bottom: 1px solid #f7f7f7;
+}
+
 .chat-screen {
-  background-image: urL(../images/chatBackground.png);
+  background-image: urL(../images/chatBackground3.png);
   min-height: 100vh;
   padding: 0px;
 }
@@ -86,7 +91,6 @@
 .message {
   display: flex;
   align-items: flex-start;
-  width: 50%;
 }
 
 .message .message__content {
@@ -119,6 +123,7 @@
 
 .sent-message .message__bubble {
   border-top-right-radius: 0;
+  background-color: #feeb35;
 }
 
 .incoming-message img {
