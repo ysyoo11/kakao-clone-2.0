@@ -69,3 +69,7 @@
   justify-content: center;
   align-items: center;
 }
+
+.friend__column .fa-comment-alt {
+  font-size: 22px;
+}

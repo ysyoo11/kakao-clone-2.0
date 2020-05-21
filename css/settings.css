@@ -1,0 +1,22 @@
+.settings .settings__sections {
+  border-top: 1px solid #fafafa;
+  padding: 20px 0px;
+}
+
+.settings .settings__setting {
+  padding: 15px 0px;
+  display: flex;
+  align-items: center;
+}
+
+.settings__setting .settings__icon {
+  font-size: 22px;
+  margin-right: 20px;
+  opacity: 0.7;
+}
+
+.settings__setting .settings__title {
+  font-size: 18px;
+  opacity: 0.95;
+  font-weight: 300;
+}
