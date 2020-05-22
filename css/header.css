@@ -8,8 +8,9 @@
   width: 100%;
   left: 0;
   padding: 0 20px 15px 20px;
-  background-color: white;
+  background-color: #fdfdfd;
   border-bottom: 1px solid #fafafa;
+  z-index: 9;
 }
 
 .header .header__title {

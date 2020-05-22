@@ -1,3 +1,8 @@
+/* .header-wrapper {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
+    rgba(0, 0, 0, 0.024) 0px -6px 16px -6px;
+} */
+
 .chat {
   padding: 10px 0px;
   border-bottom: 1px solid #f7f7f7;
@@ -25,28 +30,45 @@
   background-color: white;
 }
 
-.chat-body .status-bar,
-.chat-body .header {
-  margin-top: 15px;
-  margin-bottom: 0;
-  padding: 30px 20px 30px 20px;
+.chat-body__status-bar i {
+  font-size: 14px;
 }
 
-.chat__write {
+.chat-body__status-bar .status-bar__battery-level {
+  margin-left: 5px;
+}
+
+.chat-body .status-bar,
+.chat-body .header {
+  margin-top: 17px;
+  margin-bottom: 0;
+  padding: 28px 20px 30px 20px;
+}
+
+.chat__write-container {
   position: fixed;
-  bottom: 50px;
-  width: 80%;
+  bottom: 0;
   right: 0;
   left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fcfcfc;
-  padding: 0 20px;
-  border-radius: 40px;
   margin: 0 auto;
-  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
-    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  width: 100%;
+}
+
+.chat__icon-left {
+  position: absolute;
+  left: 10px;
+}
+
+.chat__icon-right {
+  position: absolute;
+  right: 10px;
+}
+
+.chat__write-column input:focus {
+  outline: none;
 }
 
 .chat__write i {
@@ -57,15 +79,57 @@
   width: 80%;
 }
 
-.chat__write-column input {
-  padding: 20px 10px;
-  width: 100%;
-  border: none;
-  font-size: 14px;
+@keyframes float {
+  0% {
+    margin-bottom: 10px;
+    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  }
+  50% {
+    margin-bottom: 0px;
+    box-shadow: 0 13px 27px -50px rgba(50, 50, 93, 0.25),
+      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  }
+  100% {
+    margin-bottom: 10px;
+    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  }
 }
 
-.chat__write-column input:focus {
+.chat__write {
+  bottom: 0px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 0;
+  padding: 15px 60px;
+  border: none;
+  font-size: 14px;
+  transition: width 0.5s ease-in-out, border-radius 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
+}
+
+.chat__write:focus {
   outline: none;
+  width: 80%;
+  transform: translateY(-90px);
+  border-radius: 40px;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  animation: float 3s linear infinite forwards;
+}
+
+.chat__icon {
+  font-size: 18px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.chat__write:focus ~ .chat__icon {
+  opacity: 0;
+}
+
+.chat__write-column i {
+  margin-left: 3px;
 }
 
 .chat-screen .chat__messages {
@@ -126,10 +190,22 @@
   background-color: #feeb35;
 }
 
+@keyframes spin {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotateY(1turn);
+  }
+}
+
 .incoming-message img {
   width: 40px;
   border-radius: 15px;
   margin-right: 15px;
+  animation: spin 1s linear infinite;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 16px -8px,
+    rgba(0, 0, 0, 0.024) 0px -6px 16px -6px;
 }
 
 .incoming-message .message__author {
@@ -139,4 +215,34 @@
 
 .incoming-message .message__bubble {
   border-top-left-radius: 0;
+}
+
+@keyframes incomingAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.incoming-message {
+  animation: incomingAnimation 0.6s ease-out forwards;
+}
+
+@keyframes sentAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.sent-message {
+  animation: sentAnimation 0.6s ease-out forwards;
 }
