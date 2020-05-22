@@ -10,7 +10,7 @@
 
 .chat-screen {
   background-image: urL(../images/chatBackground3.png);
-  min-height: 100vh;
+  min-height: 90vh;
   padding: 0px;
 }
 

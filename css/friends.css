@@ -1,3 +1,7 @@
+.friends__list {
+  min-height: 90vh;
+}
+
 .friends .friends__plus {
   border-top: 1px solid #fafafa;
   border-bottom: 1px solid #fafafa;
