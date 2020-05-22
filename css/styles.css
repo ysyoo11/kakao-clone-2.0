@@ -25,6 +25,7 @@ body {
 main {
   margin-top: 100px;
   animation: fadeIn 0.5s ease-in-out;
+  background-color: #fdfdfd;
 }
 
 a {
