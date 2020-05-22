@@ -10,8 +10,14 @@
   font-size: 14px;
   opacity: 0.6;
   margin-bottom: 12px;
+  padding: 0px 20px;
 }
 
 .friends__list .friends__friend {
-  padding: 10px 0px;
+  padding: 10px 20px;
+}
+
+.friends .friends__header,
+.friends__plus .friend__column {
+  padding: 0px 20px;
 }

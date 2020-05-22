@@ -8,6 +8,10 @@
   margin-left: -10px;
 }
 
+.more .friend {
+  padding: 0px 20px;
+}
+
 .more__btn-list .more__btn,
 .more .suggestion {
   display: flex;
